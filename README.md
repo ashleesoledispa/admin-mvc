@@ -90,7 +90,7 @@ API Routes de Next.js encargadas de la lógica de negocio y validaciones.
 ## 1. Clonar repositorio
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/ashleesoledispa/admin-mvc.git
 ````
 
 ## 2. Instalar dependencias
