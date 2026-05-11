@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+````md id="4b3xtz"
+# Event Analytics Manager
 
-## Getting Started
+Sistema MVC desarrollado con Next.js + TypeScript enfocado en la administración y análisis comparativo de eventos.
 
-First, run the development server:
+## Descripción del Proyecto
+
+Event Analytics Manager es una aplicación web que permite administrar eventos, registrar ventas de entradas y generar análisis comparativos entre eventos históricos y eventos actuales.
+
+El sistema fue desarrollado bajo arquitectura MVC y tiene como objetivo ayudar a organizadores de eventos a evaluar el rendimiento de sus ventas mediante métricas y recomendaciones automáticas basadas en eventos anteriores.
+
+---
+
+# Funcionalidades Principales
+
+## Administración de Eventos
+- Creación de eventos
+- Registro de:
+  - nombre
+  - fecha
+  - aforo
+  - categoría
+
+## Registro de Ventas
+- Registro de ventas de entradas
+- Asociación de ventas a eventos mediante dropdown dinámico
+- Control de ingresos
+
+## Dashboard Analítico
+- Comparación automática entre eventos pasados y eventos recientes
+- Análisis de rendimiento
+- Recomendaciones automáticas según comportamiento de ventas
+- Visualización de ingresos y entradas vendidas
+
+---
+
+# Validaciones Back-End
+
+El sistema implementa validaciones en servidor para proteger datos sensibles del core del negocio.
+
+## Validación implementada:
+- El sistema no permite registrar ventas que superen el aforo máximo del evento.
+
+Esta validación se realiza directamente en el Back-End antes de guardar información en la base de datos.
+
+---
+
+# Relaciones Entre Tablas
+
+El sistema utiliza relaciones entre entidades mediante Prisma ORM.
+
+## Relación implementada:
+- Un evento puede tener múltiples ventas.
+- Las ventas se registran seleccionando el evento desde un dropdown dinámico.
+- No se permite ingresar manualmente claves foráneas.
+
+---
+
+# Tecnologías Utilizadas
+
+- Next.js
+- TypeScript
+- Prisma ORM
+- SQLite
+- TailwindCSS
+- React
+- Vercel
+
+---
+
+# Arquitectura MVC
+
+El proyecto sigue una estructura basada en el patrón MVC:
+
+## Model
+Modelos Prisma:
+- Event
+- Sale
+
+## View
+Interfaces desarrolladas con Next.js y TailwindCSS.
+
+## Controller
+API Routes de Next.js encargadas de la lógica de negocio y validaciones.
+
+---
+
+# Instalación Local
+
+## 1. Clonar repositorio
+
+```bash
+git clone URL_DEL_REPOSITORIO
+````
+
+## 2. Instalar dependencias
+
+```bash
+npm install
+```
+
+## 3. Generar Prisma Client
+
+```bash
+npx prisma generate
+```
+
+## 4. Ejecutar migraciones
+
+```bash
+npx prisma migrate dev
+```
+
+## 5. Iniciar servidor
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Aplicación desplegada en Vercel.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+# Autor
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Proyecto desarrollado por Ashlee Soledispa.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+```
